@@ -1,6 +1,7 @@
 const caesar = function(string, shifts) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
     let caesarArray = [];
+    // For shifts bigger then the alphabet length
     if (Math.abs(shifts) > alphabet.length) shifts %= alphabet.length;
 
     for(let i = 0; i < string.length; i++) {
@@ -17,7 +18,6 @@ const caesar = function(string, shifts) {
                 charIndex = alphabet.length + charIndex;
             }
             let caesarChar = isUpperCase(char) ? alphabet[charIndex - Math.abs(shifts)].toUpperCase() : alphabet[charIndex - Math.abs(shifts)];
-            
             caesarArray.push(caesarChar);
             continue;
         }
